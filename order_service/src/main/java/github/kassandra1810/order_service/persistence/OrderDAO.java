@@ -12,6 +12,6 @@ public interface OrderDAO {
     Order save(@Valid Order order);
     Optional<Order> findById(String id);
     List<Order> findOrdersByStatus(OrderStatus status);
-    Iterable getOrders();
+    Iterable<Order> getOrders();
     Optional<Order> updateOrder(String id, final Order leaseDetails);
 }

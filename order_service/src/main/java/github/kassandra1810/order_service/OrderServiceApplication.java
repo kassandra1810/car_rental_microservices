@@ -9,10 +9,10 @@ import org.springframework.cloud.stream.messaging.Sink;
 @EnableFeignClients
 @SpringBootApplication
 @EnableBinding(Sink.class)
-public class LeaseServiceApplication {
+public class OrderServiceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(LeaseServiceApplication.class, args);
+        SpringApplication.run(OrderServiceApplication.class, args);
     }
 
 }

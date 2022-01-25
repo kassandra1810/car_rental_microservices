@@ -15,10 +15,10 @@ import java.util.regex.Pattern;
 public class MessageListenerService {
     //TODO Add actual implementation
     private Logger logger = LoggerFactory.getLogger(MessageListenerService.class);
-    private Pattern pattern = Pattern.compile("new permission added (\\d+)");
+    private Pattern pattern = Pattern.compile("deleted user (\\d+)");
 
     public MessageListenerService() {
-        logger.info("********** Starting Order Service Message Listener *********");
+        logger.info("********** Starting Lease Service Message Listener *********");
     }
 
     // Spring will call this function each time a message arrives on the configured Kafka topic, with a string value such as "deleted user 1"

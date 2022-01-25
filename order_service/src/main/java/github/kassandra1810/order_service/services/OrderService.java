@@ -24,6 +24,13 @@ public class OrderService {
         this.carService = carService;
     }
 
+    public void init() {
+        Order order1 = new Order("1", "1", LocalDateTime.now(), LocalDateTime.now(), LocalDateTime.now(), OrderStatus.CREATED);
+        Order order2 = new Order("2","1", LocalDateTime.now(), LocalDateTime.now(), LocalDateTime.now(), OrderStatus.CREATED);
+        orderDAO.save(order1);
+        orderDAO.save(order2);
+    }
+
     public Order createOrder(final Order orderDetails) {
         final String orderId = UUID.randomUUID().toString();
         final LocalDateTime orderDate = LocalDateTime.now();
