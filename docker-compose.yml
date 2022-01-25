@@ -1,0 +1,29 @@
+version: "3.8"
+services:
+  couchbase:
+    container_name: "couchbase_orders"
+    image: "couchbase/server:latest"
+    build: 
+        context: ./orders_couchbase
+    ports:
+      - "8091:8091"
+      - "11210:11210"
+    restart: always
+    healthcheck:
+        test: ["CMD", "curl", "-f", "http://localhost:8091"]
+        interval: 30s
+        timeout: 10s
+        retries: 5
+  order_service:
+    depends_on:
+      couchbase:
+        condition: service_healthy
+    build: ./order_service
+    ports:
+      - "8888:8888"
+    restart: always
+    
+  
+    
+    
+
