@@ -11,11 +11,10 @@
     </parent>
 
     <groupId>github.kassandra1810</groupId>
-    <artifactId>lease_service</artifactId>
+    <artifactId>order_service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>lease_service</name>
+    <name>order_service</name>
     <description>Demo project for Spring Boot</description>
-
 
     <dependencyManagement>
         <dependencies>
@@ -57,10 +56,6 @@
         <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-couchbase</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-validator</artifactId>
         </dependency>
         <dependency>
             <groupId>joda-time</groupId>

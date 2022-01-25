@@ -8,6 +8,11 @@ import org.springframework.data.couchbase.repository.config.EnableCouchbaseRepos
 @EnableCouchbaseRepositories(basePackages = {"github.kassandra1810.order_service"})
 public class CouchbaseConfiguration extends AbstractCouchbaseConfiguration {
 
+//    @Override
+//    public String getConnectionString() {
+//        return "couchbase";
+//    }
+
     @Override
     public String getConnectionString() {
         return "localhost";

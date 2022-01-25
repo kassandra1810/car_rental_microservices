@@ -35,9 +35,10 @@ public class Order {
     @Field
     private OrderStatus orderStatus;
 
-    public Order(LocalDateTime leaseDate, LocalDateTime bookStartDate, LocalDateTime bookEndDate) {
+    public Order(String carId, LocalDateTime leaseDate, LocalDateTime bookStartDate, LocalDateTime bookEndDate) {
+        this.carId = carId;
         this.orderDate = leaseDate;
-        this.orderStatus = OrderStatus.PENDING;
+        this.orderStatus = OrderStatus.CREATED;
         this.bookStartDate = bookStartDate;
         this.bookEndDate = bookEndDate;
     }

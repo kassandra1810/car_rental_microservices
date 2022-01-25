@@ -1,9 +1,8 @@
 package github.kassandra1810.order_service.controller;
 
 import github.kassandra1810.order_service.loadbalancer.RibbonConfiguration;
-import github.kassandra1810.order_service.services.CarService;
-import github.kassandra1810.order_service.services.OrderService;
 import github.kassandra1810.order_service.model.Order;
+import github.kassandra1810.order_service.services.OrderService;
 import github.kassandra1810.order_service.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.netflix.ribbon.RibbonClient;
@@ -12,25 +11,30 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("leases")
+@RequestMapping("orders")
 @RibbonClient(
-        name = "user-service",
+        name = "car-service",
         configuration = RibbonConfiguration.class)
 public class OrderController {
 
     private final OrderService orderService;
-    private final CarService carService;
     private final UserService userService;
 
     @Autowired
-    public OrderController(final OrderService orderService, CarService carService, UserService userService) {
+    public OrderController(final OrderService orderService, UserService userService) {
         this.orderService = orderService;
-        this.carService = carService;
         this.userService = userService;
+    }
+
+    @GetMapping("test")
+    public ResponseEntity<List<String>> test() {
+        orderService.init();
+            return new ResponseEntity<>(Arrays.asList("Ala ma kota", "Kasia ma psa", "Robert ma konia"), HttpStatus.OK);
     }
 
     @GetMapping
