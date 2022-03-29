@@ -8,7 +8,7 @@ public class CarServiceApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(CarServiceApplication.class, args);
-        System.out.println("Hello car service2");
+        System.out.println("Hello car service 3 ");
     }
 
 }
