@@ -12,6 +12,8 @@ import springfox.documentation.spring.web.plugins.Docket;
 
 import java.util.Collections;
 
+// tomek
+
 @Configuration
 public class ApplicationConfig {
 
